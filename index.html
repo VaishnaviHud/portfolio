@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaishnavi Hud - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a202c;
+            background-color: #f7fafc;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #2d3748;
+            border-bottom: 4px solid #4299e1;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        /* Custom scrollbar styles */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e0;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a0aec0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 antialiased leading-relaxed">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto p-4 flex justify-between items-center">
+            <a href="#about" class="text-2xl font-bold text-blue-600 rounded-lg p-2 transition-colors hover:bg-gray-100">Vaishnavi Hud</a>
+            <div class="space-x-4">
+                <a href="#projects" class="text-gray-600 hover:text-blue-600 font-medium rounded-lg p-2 transition-colors hover:bg-gray-100">Projects</a>
+                <a href="#experience" class="text-gray-600 hover:text-blue-600 font-medium rounded-lg p-2 transition-colors hover:bg-gray-100">Experience</a>
+                <a href="#skills" class="text-gray-600 hover:text-blue-600 font-medium rounded-lg p-2 transition-colors hover:bg-gray-100">Skills</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium rounded-lg p-2 transition-colors hover:bg-gray-100">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-6">
+
+        <!-- Hero Section -->
+        <section id="about" class="py-16 md:py-24 animate-fadeIn">
+            <div class="flex flex-col md:flex-row items-center justify-center text-center md:text-left space-y-6 md:space-y-0 md:space-x-12">
+                <div class="w-36 h-36 md:w-48 md:h-48 rounded-full bg-blue-200 flex items-center justify-center overflow-hidden">
+                    <svg class="w-2/3 h-2/3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+                        Hi, I'm <span class="text-blue-600">Vaishnavi Hud</span>
+                    </h1>
+                    <p class="text-lg md:text-2xl text-gray-600 mt-4 max-w-2xl">
+                        A passionate Computer Science student from VJTI, Mumbai, specializing in full-stack development and artificial intelligence.
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-4 mt-6">
+                        <a href="https://github.com/VaishnaviHud" target="_blank" class="bg-gray-800 text-white px-6 py-3 rounded-full font-semibold transition-transform duration-300 ease-in-out hover:scale-105">
+                            GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/vaishnavi" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold transition-transform duration-300 ease-in-out hover:scale-105">
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 animate-fadeIn" style="animation-delay: 0.2s;">
+            <h2 class="section-title text-center mx-auto mb-12">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Examease Card -->
+                <div class="card p-6 flex flex-col items-start space-y-4">
+                    <h3 class="text-xl font-bold text-gray-800">Examease</h3>
+                    <p class="text-sm font-semibold text-blue-600">ReactJS, Node.js, Express, Tailwind CSS, JWT</p>
+                    <p class="text-gray-600">A full-stack examination grading system with role-based access, responsive UI, and automated grading.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Engineered a secure Teacher Panel with role-based access control (RBAC) and JWT authentication.</li>
+                        <li>Developed RESTful APIs to handle exam creation, grading, and result retrieval.</li>
+                        <li>Designed a responsive interface using Tailwind CSS.</li>
+                    </ul>
+                    <a href="https://examdeploy-1.onrender.com" target="_blank" class="text-sm text-blue-500 hover:underline mt-2">View Live Project</a>
+                </div>
+                <!-- CyberShield Card -->
+                <div class="card p-6 flex flex-col items-start space-y-4">
+                    <h3 class="text-xl font-bold text-gray-800">CyberShield</h3>
+                    <p class="text-sm font-semibold text-blue-600">Machine Learning (SVM), Python, JavaScript, Chrome Extension</p>
+                    <p class="text-gray-600">A hate speech detection system that flags offensive content in real-time.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Trained an SVM-based ML model to detect offensive, hateful, and toxic content.</li>
+                        <li>Integrated with a Chrome Extension for real-time analysis and alerts.</li>
+                    </ul>
+                </div>
+                <!-- Health Connect Card -->
+                <div class="card p-6 flex flex-col items-start space-y-4">
+                    <h3 class="text-xl font-bold text-gray-800">Health Connect</h3>
+                    <p class="text-sm font-semibold text-blue-600">ReactJS, Node.js, Express, MongoDB, Tailwind CSS</p>
+                    <p class="text-gray-600">A comprehensive healthcare platform offering multi-feature services.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Co-led a team of 4 to build a full-stack platform with JWT authentication.</li>
+                        <li>Implemented a real-time doctor appointment system and a nutrition checker feature.</li>
+                        <li>Integrated with the Nutritionix API to fetch nutritional data securely.</li>
+                    </ul>
+                    <a href="https://bit-by-bit-frontend.vercel.app/" target="_blank" class="text-sm text-blue-500 hover:underline mt-2">View Live Project</a>
+                </div>
+                <!-- HuffmanCoder Card -->
+                <div class="card p-6 flex flex-col items-start space-y-4">
+                    <h3 class="text-xl font-bold text-gray-800">HuffmanCoder</h3>
+                    <p class="text-sm font-semibold text-blue-600">C++</p>
+                    <p class="text-gray-600">Demonstrated Huffman coding algorithm for data compression and decompression.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Engineered prioritization logic using a min-heap priority queue to build the Huffman tree.</li>
+                        <li>Reduced processing time by an average of 30 seconds for encoding operations.</li>
+                        <li>Conducted performance analysis, showing up to 50% reduction in file sizes.</li>
+                    </ul>
+                </div>
+                <!-- Weather Application Card -->
+                <div class="card p-6 flex flex-col items-start space-y-4">
+                    <h3 class="text-xl font-bold text-gray-800">Weather Application</h3>
+                    <p class="text-sm font-semibold text-blue-600">HTML, CSS, JavaScript</p>
+                    <p class="text-gray-600">Real-time weather information application using the OpenWeatherMap API.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Implemented responsive design techniques for compatibility across devices.</li>
+                        <li>Used JavaScript to dynamically update weather information based on user location and preferences.</li>
+                        <li>Integrated a search feature for any city worldwide.</li>
+                        <li>Enhanced user experience with loading animations and error handling.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-16 animate-fadeIn" style="animation-delay: 0.4s;">
+            <h2 class="section-title text-center mx-auto mb-12">Experience</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold text-gray-800">Summer Intern</h3>
+                    <p class="text-lg text-blue-600">Centre of Excellence in AI, VJTI</p>
+                    <p class="text-gray-500 mt-2">May 2025 - July 2025</p>
+                    <p class="text-gray-600 mt-4">Project: Knowledge Graph-Powered Investment Advisor</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2">
+                        <li>Extracted structured investment insights from annual reports using a hybrid pipeline with spaCy and LLaMA-3.</li>
+                        <li>Constructed a financial knowledge graph in Neo4j Aura by identifying entities and relationships.</li>
+                        <li>Used Donut, EasyOCR, and nano_ocr for reasoning over visual elements.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-16 animate-fadeIn" style="animation-delay: 0.6s;">
+            <h2 class="section-title text-center mx-auto mb-12">Education</h2>
+            <div class="space-y-6">
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold text-gray-800">Veermata Jijabai Technological Institute (VJTI), Mumbai</h3>
+                    <p class="text-lg text-blue-600">Bachelor of Technology in Computer Science</p>
+                    <p class="text-gray-500 mt-2">2022 - Present | CPI: 8.14</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold text-gray-800">Shivaji Multipurpose Higher Secondary School, Amravati</h3>
+                    <p class="text-lg text-blue-600">Maharashtra State Board of Higher Secondary Education</p>
+                    <p class="text-gray-500 mt-2">2021-2022 | Percentage: 90.8</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold text-gray-800">New Orange City Convent, Warud</h3>
+                    <p class="text-lg text-blue-600">Central Board of Secondary Education</p>
+                    <p class="text-gray-500 mt-2">2020 | Percentage: 96.6</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 animate-fadeIn" style="animation-delay: 0.8s;">
+            <h2 class="section-title text-center mx-auto mb-12">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Languages -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold text-gray-800">Languages</h3>
+                    <ul class="mt-4 space-y-2 text-gray-700">
+                        <li>C++</li>
+                        <li>HTML/CSS</li>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <!-- Frameworks -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold text-gray-800">Frameworks</h3>
+                    <ul class="mt-4 space-y-2 text-gray-700">
+                        <li>React.JS</li>
+                        <li>Node.js</li>
+                        <li>Express</li>
+                    </ul>
+                </div>
+                <!-- Developer Tools -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold text-gray-800">Developer Tools</h3>
+                    <ul class="mt-4 space-y-2 text-gray-700">
+                        <li>VS Code</li>
+                        <li>MariaDB</li>
+                        <li>MySQL Workbench</li>
+                        <li>MongoDB</li>
+                        <li>Github</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 animate-fadeIn" style="animation-delay: 1s;">
+            <h2 class="section-title text-center mx-auto mb-12">Get in Touch</h2>
+            <div class="flex flex-col items-center space-y-4">
+                <p class="text-gray-600 text-lg">I'm currently seeking new opportunities. Feel free to connect!</p>
+                <div class="flex space-x-4">
+                    <a href="mailto:vaishnavihud07@gmail.com" class="text-blue-600 hover:text-blue-800 font-medium transition-colors">vaishnavihud07@gmail.com</a>
+                    <a href="tel:+918625812036" class="text-blue-600 hover:text-blue-800 font-medium transition-colors">+91-8625812036</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-6 text-center mt-12 rounded-t-2xl">
+        <p>&copy; 2025 Vaishnavi Hud. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
